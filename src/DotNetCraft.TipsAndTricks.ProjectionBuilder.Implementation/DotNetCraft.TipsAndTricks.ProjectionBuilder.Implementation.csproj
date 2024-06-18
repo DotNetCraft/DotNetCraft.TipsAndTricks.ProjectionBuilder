@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Title>This is a test</Title>
+    <Description>fsdfgdsfgdsf</Description>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IncludeSymbols>False</IncludeSymbols>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <EnablePackageValidation>true</EnablePackageValidation>
+  </PropertyGroup>
+
+</Project>

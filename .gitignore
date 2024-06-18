@@ -1,0 +1,7 @@
+.vs/
+DotNetCraft.TipsAndTricks.ProjectionBuilder.Benchmark/obj/
+src/DotNetCraft.TipsAndTricks.ProjectionBuilder.Implementation/obj/
+test/DotNetCraft.TipsAndTricks.ProjectionBuilder.Tests/obj/
+DotNetCraft.TipsAndTricks.ProjectionBuilder.Benchmark/bin/
+src/DotNetCraft.TipsAndTricks.ProjectionBuilder.Implementation/bin/
+test/DotNetCraft.TipsAndTricks.ProjectionBuilder.Tests/bin/

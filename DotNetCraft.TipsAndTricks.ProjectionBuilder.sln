@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F54555E3-F5AF-4491-AA53-76F923606C24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{09A2CB4F-117D-4DDC-8841-84C9E8A1F1B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCraft.TipsAndTricks.ProjectionBuilder.Implementation", "src\DotNetCraft.TipsAndTricks.ProjectionBuilder.Implementation\DotNetCraft.TipsAndTricks.ProjectionBuilder.Implementation.csproj", "{AEED4A96-E17D-4B2B-9090-35E9D539BCCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCraft.TipsAndTricks.ProjectionBuilder.Tests", "test\DotNetCraft.TipsAndTricks.ProjectionBuilder.Tests\DotNetCraft.TipsAndTricks.ProjectionBuilder.Tests.csproj", "{DF305B49-899E-4E6E-B9AA-500DA456089B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCraft.TipsAndTricks.ProjectionBuilder.Benchmark", "DotNetCraft.TipsAndTricks.ProjectionBuilder.Benchmark\DotNetCraft.TipsAndTricks.ProjectionBuilder.Benchmark.csproj", "{43039203-37CA-4E59-A110-8843CA107059}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEED4A96-E17D-4B2B-9090-35E9D539BCCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEED4A96-E17D-4B2B-9090-35E9D539BCCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEED4A96-E17D-4B2B-9090-35E9D539BCCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEED4A96-E17D-4B2B-9090-35E9D539BCCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF305B49-899E-4E6E-B9AA-500DA456089B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF305B49-899E-4E6E-B9AA-500DA456089B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF305B49-899E-4E6E-B9AA-500DA456089B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF305B49-899E-4E6E-B9AA-500DA456089B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43039203-37CA-4E59-A110-8843CA107059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43039203-37CA-4E59-A110-8843CA107059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43039203-37CA-4E59-A110-8843CA107059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43039203-37CA-4E59-A110-8843CA107059}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AEED4A96-E17D-4B2B-9090-35E9D539BCCB} = {F54555E3-F5AF-4491-AA53-76F923606C24}
+		{DF305B49-899E-4E6E-B9AA-500DA456089B} = {09A2CB4F-117D-4DDC-8841-84C9E8A1F1B1}
+		{43039203-37CA-4E59-A110-8843CA107059} = {F54555E3-F5AF-4491-AA53-76F923606C24}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98435058-CC58-42CD-B27B-C3418F314D2E}
+	EndGlobalSection
+EndGlobal
