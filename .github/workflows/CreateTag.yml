@@ -23,6 +23,7 @@ jobs:
       - name: 🏷️ Create/update tag
         uses: actions/github-script@v7
         with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const version = process.env.VERSION
             let versionParts = version.split('.')
