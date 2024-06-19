@@ -31,7 +31,7 @@ jobs:
             RELEASE_BRANCHES: main,master,release/*,hotfix/*
             PRE_RELEASE_BRANCHES: feature/*          
           
-      - name: Set tag name
+      - name: Set tag name1
         run: |
             TAG_NAME=$(echo ${{ steps.tag_version.outputs.new_tag }} | sed 's/v//')
             if [[ "${{ github.ref }}" == "refs/heads/main" || "${{ github.ref }}" == "refs/heads/master" ]]; then
