@@ -52,3 +52,20 @@ jobs:
             git config user.email "github-actions@users.noreply.github.com"
             git tag $TAG_NAME
             git push origin $TAG_NAME
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+            dotnet-version: 8.0.x                  
+      - name: Restore dependencies
+        run: dotnet restore        
+      - name: Build
+        run: dotnet build --no-restore      
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
+        
+      - name: Pack
+        run: dotnet pack src/DotNetCraft.TipsAndTricks.ProjectionBuilder.Implementation/DotNetCraft.TipsAndTricks.ProjectionBuilder.Implementation.csproj --configuration Release --no-build --output out /p:PackageVersion=${{ github.ref }}
+
+      - name: Push
+        run: dotnet nuget push out/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json

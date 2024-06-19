@@ -2,11 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Title>This is a test</Title>
-    <Description>fsdfgdsfgdsf</Description>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <IncludeSymbols>False</IncludeSymbols>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	
+    <!-- Package metadata -->
+    <PackageId>DotNetCraft.TipsAndTricks.ProjectionBuilder.Implementation.csproj</PackageId>
+    <Authors>DotNetCraft</Authors>
+    <Company>DotNetCraft</Company>
+    <Description>Test package description.</Description>
+    <PackageTags>Tag1 Tag2</PackageTags>
     
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <EnablePackageValidation>true</EnablePackageValidation>
