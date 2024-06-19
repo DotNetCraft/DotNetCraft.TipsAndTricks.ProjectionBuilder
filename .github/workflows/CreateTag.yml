@@ -40,6 +40,8 @@ jobs:
                 echo "TAG_NAME=${TAG_NAME}-hotfix" >> $GITHUB_ENV
             elif [[ "${{ github.ref }}" == refs/heads/feature/* ]]; then
                 echo "TAG_NAME=${TAG_NAME}-alpha" >> $GITHUB_ENV
+            elif [[ "${{ github.ref }}" == refs/heads/develop/* ]]; then
+                echo "TAG_NAME=${TAG_NAME}-beta" >> $GITHUB_ENV
             elif [[ "${{ github.ref }}" == refs/heads/release/* ]]; then
                 echo "TAG_NAME=${TAG_NAME}-release" >> $GITHUB_ENV
             fi          
