@@ -25,6 +25,7 @@ jobs:
             elif [[ "${{ github.ref }}" == refs/heads/develop/* ]]; then
                 echo "::set-output name=tag::${TAG_NAME}-beta"
             elif [[ "${{ github.ref }}" == refs/heads/release/* ]]; then
+                echo "TAG_NAME is '${TAG_NAME}'"
                 echo "::set-output name=tag::${TAG_NAME}-release"
             fi                    
       - name: Bump version and push tag 2  
