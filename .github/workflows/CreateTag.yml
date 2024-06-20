@@ -19,7 +19,7 @@ jobs:
             WITH_V: false
             #INITIAL_VERSION: 3.0.5
             DEFAULT_BUMP: patch
-            RELEASE_BRANCHES: main,release/*,hotfix/*
-            PRE_RELEASE_BRANCHES: develop,feature/*
+            RELEASE_BRANCHES: main
+            PRE_RELEASE_BRANCHES: develop,feature/*,release/*,hotfix/*
             TAG_CONTEXT: branch
             PRERELEASE: true
