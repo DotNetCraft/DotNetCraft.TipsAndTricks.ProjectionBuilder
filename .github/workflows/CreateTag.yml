@@ -14,18 +14,16 @@ jobs:
       - name: Set PRERELEASE_SUFFIX
         id: prerelease
         run: |
-            TAG_NAME=$(echo ${{ steps.tag_version.outputs.new_tag }} | sed 's/v//')
-            BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//-/g')
             if [[ "${{ github.ref }}" == "refs/heads/main" || "${{ github.ref }}" == "refs/heads/master" ]]; then
-                echo "::set-output name=tag::${TAG_NAME}"
+                echo "::set-output name = tag::${TAG_NAME}"
             elif [[ "${{ github.ref }}" == refs/heads/hotfix/* ]]; then
-                echo "::set-output name=tag::${TAG_NAME}-hotfix"
+                echo "::set-output name = hotfix"
             elif [[ "${{ github.ref }}" == refs/heads/feature/* ]]; then
-                echo "::set-output name=tag::${TAG_NAME}-alpha"
+                echo "::set-output name = alpha"
             elif [[ "${{ github.ref }}" == refs/heads/develop/* ]]; then
-                echo "::set-output name=tag::${TAG_NAME}-beta"
+                echo "::set-output name=beta"
             elif [[ "${{ github.ref }}" == refs/heads/release/* ]]; then                
-                echo "::set-output name=tag::${TAG_NAME}-release"
+                echo "::set-output name = release"
             fi                    
       - name: Bump version and push tag 2  
         id: tag_version
@@ -33,7 +31,6 @@ jobs:
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             WITH_V: false
-            #INITIAL_VERSION: 3.0.5
             DEFAULT_BUMP: patch
             RELEASE_BRANCHES: main
             PRE_RELEASE_BRANCHES: develop,feature/*,release/*,hotfix/*
