@@ -11,6 +11,22 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4      
+      - name: Set PRERELEASE_SUFFIX
+        id: prerelease
+        run: |
+            TAG_NAME=$(echo ${{ steps.tag_version.outputs.new_tag }} | sed 's/v//')
+            BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//-/g')
+            if [[ "${{ github.ref }}" == "refs/heads/main" || "${{ github.ref }}" == "refs/heads/master" ]]; then
+                echo "::set-output name=tag::${TAG_NAME}"
+            elif [[ "${{ github.ref }}" == refs/heads/hotfix/* ]]; then
+                echo "::set-output name=tag::${TAG_NAME}-hotfix"
+            elif [[ "${{ github.ref }}" == refs/heads/feature/* ]]; then
+                echo "::set-output name=tag::${TAG_NAME}-alpha"
+            elif [[ "${{ github.ref }}" == refs/heads/develop/* ]]; then
+                echo "::set-output name=tag::${TAG_NAME}-beta"
+            elif [[ "${{ github.ref }}" == refs/heads/release/* ]]; then
+                echo "::set-output name=tag::${TAG_NAME}-release"
+            fi                    
       - name: Bump version and push tag 2  
         id: tag_version
         uses: anothrNick/github-tag-action@1.67.0
@@ -23,3 +39,4 @@ jobs:
             PRE_RELEASE_BRANCHES: develop,feature/*,release/*,hotfix/*
             TAG_CONTEXT: branch
             PRERELEASE: true
+            PRERELEASE_SUFFIX: ${{ steps.prerelease.outputs.tag }}
