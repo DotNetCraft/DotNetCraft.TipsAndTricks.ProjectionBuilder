@@ -1,0 +1,11 @@
+on:
+  push:
+    tags:
+      - '*-hotfix'
+      - '*-alpha'
+      - '*-beta'
+      - '*-release'
+    branches:
+      - 'main'
+      - 'dev'
+      - 'release'
