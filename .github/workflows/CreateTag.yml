@@ -19,7 +19,7 @@ jobs:
             WITH_V: false
             INITIAL_VERSION: 2.0.0
             DEFAULT_BUMP: patch
-            RELEASE_BRANCHES: main,master,release.*,hotfix.*,release/*,hotfix/*
-            PRE_RELEASE_BRANCHES: develop,feature.*,feature/*
-            TAG_CONTEXT: repo
+            RELEASE_BRANCHES: main,master,release/*,hotfix/*
+            PRE_RELEASE_BRANCHES: develop,feature/*
+            TAG_CONTEXT: branch
             PRERELEASE: true
