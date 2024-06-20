@@ -15,15 +15,15 @@ jobs:
         id: prerelease
         run: |
             if [[ "${{ github.ref }}" == "refs/heads/main" || "${{ github.ref }}" == "refs/heads/master" ]]; then
-                echo "::set-output name = tag::${TAG_NAME}"
+                echo "::set-output name=''"
             elif [[ "${{ github.ref }}" == refs/heads/hotfix/* ]]; then
-                echo "::set-output name = hotfix"
+                echo "::set-output name=hotfix"
             elif [[ "${{ github.ref }}" == refs/heads/feature/* ]]; then
-                echo "::set-output name = alpha"
+                echo "::set-output name=alpha"
             elif [[ "${{ github.ref }}" == refs/heads/develop/* ]]; then
                 echo "::set-output name=beta"
             elif [[ "${{ github.ref }}" == refs/heads/release/* ]]; then                
-                echo "::set-output name = release"
+                echo "::set-output name=release"
             fi                    
       - name: Bump version and push tag 2  
         id: tag_version
