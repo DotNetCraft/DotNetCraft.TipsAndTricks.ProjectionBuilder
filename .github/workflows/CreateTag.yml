@@ -15,15 +15,15 @@ jobs:
         id: prerelease
         run: |
             if [[ "${{ github.ref }}" == "refs/heads/main" || "${{ github.ref }}" == "refs/heads/master" ]]; then
-                echo "::set-output name=''"
+                echo "::set-output name=tag::''"
             elif [[ "${{ github.ref }}" == refs/heads/hotfix/* ]]; then
-                echo "::set-output name=hotfix"
+                echo "::set-output name=tag::hotfix"
             elif [[ "${{ github.ref }}" == refs/heads/feature/* ]]; then
-                echo "::set-output name=alpha"
+                echo "::set-output name=tag::alpha"
             elif [[ "${{ github.ref }}" == refs/heads/develop/* ]]; then
-                echo "::set-output name=beta"
+                echo "::set-output name=tag::beta"
             elif [[ "${{ github.ref }}" == refs/heads/release/* ]]; then                
-                echo "::set-output name=release"
+                echo "::set-output name=tag::release"
             fi                    
       - name: Bump version and push tag 2  
         id: tag_version
@@ -31,7 +31,7 @@ jobs:
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             WITH_V: false
-            INITIAL_VERSION: 5.0.0
+            INITIAL_VERSION: 5.0.1
             DEFAULT_BUMP: patch
             RELEASE_BRANCHES: main
             PRE_RELEASE_BRANCHES: develop,feature/*,release/*,hotfix/*
