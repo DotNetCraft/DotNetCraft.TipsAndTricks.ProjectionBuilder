@@ -22,3 +22,4 @@ jobs:
             RELEASE_BRANCHES: main,master,release.*,hotfix.*,release/*,hotfix/*
             PRE_RELEASE_BRANCHES: develop,feature.*,feature/*
             TAG_CONTEXT: repo
+            PRERELEASE: true
