@@ -18,6 +18,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             WITH_V: false
             DEFAULT_BUMP: patch
-            RELEASE_BRANCHES: main,master,release/*,hotfix/*
-            PRE_RELEASE_BRANCHES: develop,feature/*
+            RELEASE_BRANCHES: main,master,release.*,hotfix.*,release/*,hotfix/*
+            PRE_RELEASE_BRANCHES: develop,feature.*,feature/*
             TAG_CONTEXT: branch
