@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4      
-      - name: Bump version and push tag   
+      - name: Bump version and push tag 2  
         id: tag_version
         uses: anothrNick/github-tag-action@1.67.0
         env:
